@@ -1,12 +1,22 @@
 import React from "react";
 import bgImg from "../static/images/home-hero.png";
 import { Link } from "react-router-dom";
-import '../static/css/index.css';
+// import '../static/css/index.css';
 
 export default function About() {
   return (
     <div className="about-page-container">
-      <img src={bgImg} alt="backPicture" className="about-hero-image" />
+      <img src={bgImg} alt="backPicture" className="about-hero-image" style={{
+        width: "100%",
+        // height: "100%",
+        // objectFit: "cover",
+        // objectPosition: "center",
+        // position: "absolute",
+        // top: "0",
+        // left: "0",
+        // zIndex: "-1",
+
+      }} />
       <div className="about-page-content">
         <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
         <p>
