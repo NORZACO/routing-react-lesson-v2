@@ -44,7 +44,7 @@ export default function About() {
         </Link>
       </div>
     </div>
-    <Footer />
+    {/* <Footer /> */}
     </>
   );
 }
