@@ -13,7 +13,6 @@ import Footer from './pages/Footer';
 import Heroes from './pages/Heroes';
 
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -34,7 +33,8 @@ function App() {
         <Route path="/persons" element={<Vans />} />
         <Route path="/persons/:id" element={<PersonDetails />} />
         <Route path="*" element={<NoPage />} />
-
+        {/* BROKEN LINK */}
+        <Route path="/persons/*" element={<NoPage />} />
       </Routes>
       <Footer/>
     </BrowserRouter>
