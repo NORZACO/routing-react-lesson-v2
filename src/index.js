@@ -8,7 +8,8 @@ import NoPage from "./pages/NoPage"
 import './static/css/header.css';
 // import Cover from "./App"
 import Vans from './pages/Vans';
-// Vans
+import PersonDetails from './pages/DetailsPage';
+
 
 function App() {
   return (
@@ -19,14 +20,15 @@ function App() {
           <Link to="/about">About</Link>
           <Link to="/cover">Cover</Link>
           <Link to="/contact">Contact</Link>
-          <Link to="/vans">Vans</Link>
+          <Link to="/persons">Person</Link>      
         </nav>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/cover" element={<Cover />} /> */}
         <Route path="/about" element={<About />} />
-        <Route path="/vans" element={<Vans />} />
+        <Route path="/persons" element={<Vans />} />
+        <Route path="/persons/:id" element={<PersonDetails />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>

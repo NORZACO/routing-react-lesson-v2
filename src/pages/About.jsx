@@ -1,10 +1,12 @@
 import React from "react";
 import bgImg from "../static/images/home-hero.png";
 import { Link } from "react-router-dom";
+// import AppCaller from "../setupTests";
 // import '../static/css/index.css';
 
 export default function About() {
   return (
+
     <div className="about-page-container">
       <img src={bgImg} alt="backPicture" className="about-hero-image" style={{
         width: "100%",
