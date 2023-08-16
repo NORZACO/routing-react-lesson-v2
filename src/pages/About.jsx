@@ -2,12 +2,12 @@ import React from "react";
 import bgImg from "../static/images/home-hero.png";
 import { Link } from "react-router-dom";
 // import AppCaller from "../setupTests";
-// import '../static/css/index.css';
+import '../static/css/about.css';
 
 export default function About() {
   return (
 
-    <div className="about-page-container">
+    <div className="container">
       <img src={bgImg} alt="backPicture" className="about-hero-image" style={{
         width: "100%",
         // height: "100%",
@@ -19,6 +19,7 @@ export default function About() {
         // zIndex: "-1",
 
       }} />
+      <br /> <br />
       <div className="about-page-content">
         <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
         <p>

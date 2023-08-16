@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import '../static/css/index.css';
+import '../static/css/home.css';
 
 export default function Home() {
   return (
-    <div className="home-container">
+    <div className="container container-home">
       <h1>You got the travel plans, we got the travel vans.</h1>
       <p>
         Add adventure to your life by joining the #vanlife movement. Rent the

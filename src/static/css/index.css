@@ -64,7 +64,7 @@ header a:hover {
 
 /*** HOME PAGE ***/
 .home-container {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../images/home-hero.png") no-repeat center center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../images/photo-1565106430482-8f6e74349ca1.avif") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -142,4 +142,14 @@ header a:hover {
     background-color: #161616;
     color: white;
     border-radius: 10px;
+}
+
+
+.container {
+   background-image:  url("../images/home-hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #161616;
+
 }

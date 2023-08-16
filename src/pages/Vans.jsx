@@ -18,10 +18,10 @@ export function GithubUser({ dataResults }) {
       {/* <h1> status : {status} </h1>
       <h1>username: {username} </h1> */}
       {/* <h1> allDta: { JSON.stringify(dataResults, null, 2) } </h1>  */}
-      <h1>Length : {typeof dataResults?.length} </h1>
+      {/* <h1>Length : {typeof dataResults?.length} </h1> */}
       <div className="album py-5 bg-body-tertiary">
-        <div className="container">
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 albumShadow">
+        <div className={"container"}>
+          <div className={"row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 albumShadow"}>
             {/* Here you can map through an array of cards and render them dynamically */}
             {dataResults?.map((person) => (
               // The key prop here will be used for React's diffing algorithm which helps us improve performance
