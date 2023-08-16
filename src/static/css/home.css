@@ -39,3 +39,31 @@
     color: aliceblue;
     
  }
+
+
+ .persons-button {
+    background-color: #1132e9;
+    color: white;
+    border-radius: 10px;
+    font-size: medium;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all .4s ease-in-out;
+    margin-top: 1rem;
+ }
+
+    .persons-button:hover {
+        background-color: #FF8C38;
+        color: white;
+        border-radius: 10px;
+        font-size: medium;
+        padding: 10px 20px;
+        text-decoration: none;
+        transition: all .4s ease-in-out;
+        margin-top: 1rem;
+    }
+
+
+    /* container-home ::shadow */
+    /* #shadow-root (closed) */
+    
