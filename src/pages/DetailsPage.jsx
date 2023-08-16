@@ -38,7 +38,13 @@ export default function PersonDetails() {
             {person && (
                 <div className="card">
                     <img src={person.avatar} className="card-img-top" alt={`${person.firstName}'s avatar`} />
-                    <div className="card-body">
+                    <div className="card-body" style={{
+                        padding: 20,
+                        backgroundColor : "Highlight",
+                        color : "white",
+                        borderRadius : 10,
+
+                        }}>
                         <h5 className="card-title">{person.firstName} {person.lastName}</h5>
                         <p className="card-text">Email: {person.email}</p>
                         <p className="card-text">About: {person.aboutMe}</p>
@@ -46,7 +52,7 @@ export default function PersonDetails() {
                         <p className="card-text">Birthdate: {person.birthdate}</p>
                         <p className="card-text">Registered at: {person.registeredAt}</p>
                         <h6 className="mt-4">Additional Information:</h6>
-                        <p className="card-text">Biograph: {person.userInfo.biograph}</p>
+                        <p className="card-text">Biograph: {person.userInfo.bio}</p>
                         <p className="card-text">Company: {person.userInfo.company}</p>
                         {/* ... and so on for other fields you want to display */}
                     </div>
