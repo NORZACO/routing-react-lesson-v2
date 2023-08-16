@@ -25,3 +25,9 @@
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
+
+.card-text {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}

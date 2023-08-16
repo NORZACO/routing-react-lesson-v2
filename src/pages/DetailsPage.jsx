@@ -34,7 +34,7 @@ export default function PersonDetails() {
 
     return (
         <div className="container mt-5">
-            <h1 className="mb-4">Person Details</h1>
+            <h1 className="mb-4" style={{textAlign : "center"}}>Person Details</h1>
             {person && (
                 <div className="card">
                     <img src={person.avatar} className="card-img-top" alt={`${person.firstName}'s avatar`} />
