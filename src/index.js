@@ -10,7 +10,7 @@ import './static/css/header.css';
 import Vans from './pages/Vans';
 import PersonDetails from './pages/DetailsPage';
 import Footer from './pages/Footer';
-import Heroes from './pages/Heroes';
+// import Heroes from './pages/Heroes';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
           <Link to="/persons">Person</Link>      
         </nav>
       </header>
-      < Heroes />
+      {/* < Heroes /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/cover" element={<Cover />} /> */}
@@ -34,7 +34,7 @@ function App() {
         <Route path="/persons/:id" element={<PersonDetails />} />
         <Route path="*" element={<NoPage />} />
         {/* BROKEN LINK */}
-        <Route path="/persons/*" element={<NoPage />} />
+        {/* <Route path="/persons/*" element={<NoPage />} /> */}
       </Routes>
       <Footer/>
     </BrowserRouter>
