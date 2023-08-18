@@ -1,42 +1,51 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import NoPage from "./pages/NoPage"
 // import './static/css/index.css';
 import './static/css/header.css';
-// import Cover from "./App"
+import Cover from "./App"
 import Vans from './pages/Vans';
 import PersonDetails from './pages/DetailsPage';
 import Footer from './pages/Footer';
 // import Heroes from './pages/Heroes';
 
+import Reviews from "./pages/Host/Reviews"
+import Income from "./pages/Host/Income"
+// import HostLayerout from './components/HostLayerout';
+// import Header from './pages/Header';
+
+import LayOut from "./components/LayOut"
+import Dashboard from './pages/Host/Dashboard';
 
 function App() {
   return (
     <BrowserRouter>
-      <header>
-        <Link className="site-logo" to="/"> #MWAMUZISCODEV </Link>
-        <nav>
-          <Link to="/about">About</Link>
-          <Link to="/cover">Cover</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/persons">Person</Link>      
-        </nav>
-      </header>
-      {/* < Heroes /> */}
       <Routes>
+      <Route element={<LayOut />}> 
+        <Route path="*" element={<NoPage />} />
         <Route path="/" element={<Home />} />
-        {/* <Route path="/cover" element={<Cover />} /> */}
+        <Route path="/cover" element={<Cover />} />
         <Route path="/about" element={<About />} />
         <Route path="/persons" element={<Vans />} />
         <Route path="/persons/:id" element={<PersonDetails />} />
-        <Route path="*" element={<NoPage />} />
-        {/* BROKEN LINK */}
-        {/* <Route path="/persons/*" element={<NoPage />} /> */}
+
+
+        <Route path="/host" element={<Dashboard />} />
+        <Route path="/host/reviews" element={<Reviews />} />
+        <Route path="/host/income" element={<Income />} />
+
+        
+
+
+
+
+
+        </Route> 
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   )
 }
