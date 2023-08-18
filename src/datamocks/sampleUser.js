@@ -25,7 +25,7 @@ const sampleUserData = [
                 "website": "https://automatic-experiment.info/"
             }
         },
-        "followersCount": 8,
+        "followersCount": 58,
         "followingCount": 5,
         "postsCount": 6,
         "likesCount": 6,
@@ -58,7 +58,7 @@ const sampleUserData = [
                 "website": "https://that-gambling.net/"
             }
         },
-        "followersCount": 8,
+        "followersCount": 22,
         "followingCount": 5,
         "postsCount": 7,
         "likesCount": 8,
@@ -91,7 +91,7 @@ const sampleUserData = [
                 "website": "https://sure-footed-intellect.info"
             }
         },
-        "followersCount": 4,
+        "followersCount": 53,
         "followingCount": 4,
         "postsCount": 7,
         "likesCount": 5,
@@ -124,7 +124,7 @@ const sampleUserData = [
                 "website": "https://foolish-horizon.net"
             }
         },
-        "followersCount": 4,
+        "followersCount": 44,
         "followingCount": 8,
         "postsCount": 4,
         "likesCount": 8,
@@ -157,7 +157,7 @@ const sampleUserData = [
                 "website": "https://merry-daddy.com"
             }
         },
-        "followersCount": 5,
+        "followersCount": 53,
         "followingCount": 8,
         "postsCount": 6,
         "likesCount": 8,
@@ -190,7 +190,7 @@ const sampleUserData = [
                 "website": "https://rosy-clinic.name/"
             }
         },
-        "followersCount": 5,
+        "followersCount": 65,
         "followingCount": 4,
         "postsCount": 8,
         "likesCount": 4,
@@ -223,7 +223,7 @@ const sampleUserData = [
                 "website": "https://curly-priesthood.biz/"
             }
         },
-        "followersCount": 6,
+        "followersCount": 65,
         "followingCount": 5,
         "postsCount": 7,
         "likesCount": 7,
@@ -256,7 +256,7 @@ const sampleUserData = [
                 "website": "https://another-co-producer.biz/"
             }
         },
-        "followersCount": 7,
+        "followersCount": 77,
         "followingCount": 6,
         "postsCount": 7,
         "likesCount": 4,
@@ -289,7 +289,7 @@ const sampleUserData = [
                 "website": "https://affectionate-vise.org/"
             }
         },
-        "followersCount": 7,
+        "followersCount": 47,
         "followingCount": 8,
         "postsCount": 5,
         "likesCount": 6,
@@ -322,7 +322,7 @@ const sampleUserData = [
                 "website": "https://thoughtful-hurt.com"
             }
         },
-        "followersCount": 4,
+        "followersCount": 22,
         "followingCount": 7,
         "postsCount": 4,
         "likesCount": 8,
@@ -355,7 +355,7 @@ const sampleUserData = [
                 "website": "https://buttery-cube.name/"
             }
         },
-        "followersCount": 6,
+        "followersCount": 32,
         "followingCount": 8,
         "postsCount": 7,
         "likesCount": 5,
@@ -388,7 +388,7 @@ const sampleUserData = [
                 "website": "https://gifted-skin.net"
             }
         },
-        "followersCount": 5,
+        "followersCount": 13,
         "followingCount": 7,
         "postsCount": 7,
         "likesCount": 8,

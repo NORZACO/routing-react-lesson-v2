@@ -32,15 +32,18 @@ function App() {
           <Route index element={<Home />} />
           {/* <Route path="/cover" element={<Cover />} /> */}
           <Route path="about" element={<About />} />
-          <Route path="persons" element={<Vans />} />
-          <Route path="persons/:id" element={<PersonDetails />} />
+
+
+          <Route path='persons'>
+            <Route index element={<Vans />} />
+            <Route path=":id" element={<PersonDetails />} />
+          </Route>
 
           <Route path="host" element={<HostLayerout />} > {/* PARENT:  http://localhost:3000/host/  */}
             <Route index element={<Dashboard />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="income" element={<Income />} />
           </Route>
-
         </Route>
       </Routes>
     </BrowserRouter>

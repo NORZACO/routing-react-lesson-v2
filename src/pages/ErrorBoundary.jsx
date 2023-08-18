@@ -2,7 +2,9 @@ import React from "react";
 
 // Catching rendering errors with an error boundary
 function CatchingError() {
-  return <h1> CatchingError </h1>;
+  return (
+    <h1> Something went wrong. Please refresh the page and try again. </h1>
+  );
 }
 // ErrorBoundary is a React component that catches JavaScript errors anywhere in its child component tree,
 // logs those errors, and displays a fallback UI.

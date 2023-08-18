@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <div class="container">
+      <div class="container-md" style={{ backgroundColor: "#F0F0F0" }}>
         <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
           <div class="col mb-3">
             <a
@@ -12,7 +12,9 @@ export default function Footer() {
                 <use xlink:href="/bootstrap"></use>
               </svg> */}
             </a>
-            <p class="text-body-secondary">© 2023</p>
+            <p class="text-body-secondary">
+              © 2021 Company, Inc. · <a href="/">Privacy</a> ·{" "}
+            </p>
           </div>
 
           <div class="col mb-3"></div>

@@ -46,6 +46,22 @@ export function GithubUser({ dataResults }) {
                       <li className="card-list-email-manual-style">{person.email}</li>
                       <li>{person.birthdate} </li>
                     </ul> */}
+                    <div
+                      class="progress"
+                      role="progressbar"
+                      aria-label="Basic example"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
+                      <div
+                        className="progress-bar"
+                        style={{
+                          width: `${person.followersCount}%`,
+                        }}
+                      ></div>
+                    </div>
+                    <br />
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="btn-group">
                         <Link
