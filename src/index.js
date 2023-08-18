@@ -27,16 +27,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<LayOut />}>
+        <Route path='/' element={<LayOut />}>
           <Route path="*" element={<NoPage />} />
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           {/* <Route path="/cover" element={<Cover />} /> */}
           <Route path="about" element={<About />} />
           <Route path="persons" element={<Vans />} />
           <Route path="persons/:id" element={<PersonDetails />} />
 
           <Route path="host" element={<HostLayerout />} > {/* PARENT:  http://localhost:3000/host/  */}
-            <Route path="" element={<Dashboard />} />
+            <Route index element={<Dashboard />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="income" element={<Income />} />
           </Route>
