@@ -20,6 +20,9 @@ import Income from "./pages/Host/Income"
 import LayOut from "./components/LayOut"
 import Dashboard from './pages/Host/Dashboard';
 
+
+import "./datamocks/server"
+
 function App() {
   return (
     <BrowserRouter>

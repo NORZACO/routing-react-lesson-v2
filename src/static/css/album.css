@@ -11,7 +11,8 @@
 }
 
 
-.LoaderBoot { border-style: outset;
+.LoaderBoot {
+    border-style: outset;
 
 }
 
@@ -48,6 +49,26 @@ animation:.8s ease infinite alternate LoaderBoot;
     }
 }
 
+@media (max-width: 1122px) {
+    .card-list-email-manual-style ul {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 906px) {
+    .card-list-manual-style {
+        font-size: 10px;
+    }
+
+    small.text-muted {
+        font-size: 60%;
+    }
+
+    /* .card-list-email-manual-style {
+        font-size: 9px;
+    } */
+}
+
 @media (max-width: 800px) {
     .card-text-responsive {
         font-size: 16px;
@@ -60,7 +81,13 @@ animation:.8s ease infinite alternate LoaderBoot;
     }
 }
 
+@media (max-width: 400px) {
+    .card-text-responsive {
+        font-size: 12px;
+    }
+}
 
-
-
-
+/* all card should have same height */
+/* .card {
+    height: 100%;
+} */

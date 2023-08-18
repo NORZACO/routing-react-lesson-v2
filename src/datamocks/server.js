@@ -1,9 +1,9 @@
 
 import { createServer } from "miragejs";
-import { USERS } from "./userGenerater";
+// import { USERS } from "./userGenerater";
 const { default: sampleUserData } = require('./sampleUser');
 
-// console.log(sampleUserData);
+console.log(sampleUserData);
 
 
 export default function UserApi() {
@@ -28,7 +28,7 @@ export default function UserApi() {
             // Create a new user
             this.post("/users", (schema, request) => {
                 const newUser = JSON.parse(request.requestBody);
-                USERS.push(newUser);
+                sampleUserData.push(newUser);
                 return {
                     result: newUser,
                 };

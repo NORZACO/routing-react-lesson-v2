@@ -21,36 +21,39 @@ export function GithubUser({ dataResults }) {
       {/* <h1>Length : {typeof dataResults?.length} </h1> */}
       <div className="album py-5 bg-body-tertiary">
         <div className={"container"}>
-          <div className={"row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 albumShadow"}>
+          <div
+            className={
+              "row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 albumShadow"
+            }
+          >
             {/* Here you can map through an array of cards and render them dynamically */}
             {dataResults?.map((person) => (
               // The key prop here will be used for React's diffing algorithm which helps us improve performance
-              // LINK
-              <Link to={`/persons/${person.userId}`} className="btn btn-sm btn-outline-secondary">
+              // <Link to={`/persons/${person.userId}`} key={person.userId} className="btn btn-sm btn-outline-secondary">
               <div className="col" key={person.userId}>
                 <div className="card shadow-sm">
-                  <img src={person.avatar} alt={person.firstName} />
+                  <img
+                    src={person.avatar}
+                    alt={person.firstName}
+                    className="image-container"
+                  />
                   <div className="card-body card-text-responsive">
-                    <h3 className="card-text card-text-responsive">
-                      {person.firstName}
-                      {person.lastName}{" "}
-                    </h3>
-                    <ul className="card-list">
+                    <h4 className="card-text">
+                      {person.firstName} {person.lastName}{" "}
+                    </h4>
+                    {/* <ul className="card-text card-list card-list-manual-style">
                       <li>{person.aboutMe}</li>
-                      <li>{person.email}</li>
+                      <li className="card-list-email-manual-style">{person.email}</li>
                       <li>{person.birthdate} </li>
-                    </ul>
+                    </ul> */}
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="btn-group">
-                        {/* <Link to={`/${person.userId}`}className="btn btn-sm btn-outline-secondary">View
-                        
-                        <Link></Link>
-                          href="#6"
-                          className="btn btn-sm btn-outline-secondary"
+                        <Link
+                          to={`/persons/${person.userId}`}
+                          className="btn btn-sm btn-outline-primary"
                         >
-                          Edit
-                        </Link> */}
-                        {/* <Link to={`/${person.userId}`} className="btn btn-sm btn-outline-secondary"> View </Link> */}
+                          View
+                        </Link>
                       </div>
                       <small className="text-muted">
                         {" "}
@@ -60,7 +63,7 @@ export function GithubUser({ dataResults }) {
                   </div>
                 </div>
               </div>
-              </Link>
+              // </Link>
             ))}
           </div>
         </div>
