@@ -1,20 +1,10 @@
 
 import { createServer } from "miragejs";
 import { USERS } from "./userGenerater";
+const { default: sampleUserData } = require('./sampleUser');
 
-console.log(USERS);
+// console.log(sampleUserData);
 
-// TODO #2 : LR-2 calling miragejs api
-
-// import { createServer } from "@miragejs/server";
-
-// let USERS = [
-//     {
-//         userId: '149fe288-3808-45f0-a436-65fc72ba53f6',
-//         name: 'John Doe'
-//     }
-//     // ... other users
-// ];
 
 export default function UserApi() {
     createServer({
@@ -23,13 +13,13 @@ export default function UserApi() {
 
             // Read all users
             this.get("/users", () => ({
-                result: USERS,
+                result: sampleUserData,
             }));
 
             // Read a specific user by UUID
             this.get("/users/:id", (schema, request) => {
                 const id = request.params.id.trim();
-                const user = USERS.find((user) => user.userId === id);
+                const user = sampleUserData.find((user) => user.userId === id);
                 return {
                     result: user || 'User not found',   
                 };
@@ -48,11 +38,11 @@ export default function UserApi() {
             this.put("/users/:id", (schema, request) => {
                 const id = request.params.id.trim();
                 const updatedData = JSON.parse(request.requestBody);
-                const userIndex = USERS.findIndex((user) => user.userId === id);
+                const userIndex = sampleUserData.findIndex((user) => user.userId === id);
                 if (userIndex !== -1) {
-                    USERS[userIndex] = { ...USERS[userIndex], ...updatedData };
+                    sampleUserData[userIndex] = { ...sampleUserData[userIndex], ...updatedData };
                     return {
-                        result: USERS[userIndex],
+                        result: sampleUserData[userIndex],
                     };
                 } else {
                     return {
@@ -64,9 +54,9 @@ export default function UserApi() {
             // Delete a specific user by UUID
             this.delete("/users/:id", (schema, request) => {
                 const id = request.params.id.trim();
-                const userIndex = USERS.findIndex((user) => user.userId === id);
+                const userIndex = sampleUserData.findIndex((user) => user.userId === id);
                 if (userIndex !== -1) {
-                    USERS.splice(userIndex, 1);
+                    sampleUserData.splice(userIndex, 1);
                     return {
                         result: 'User deleted successfully',
                     };
