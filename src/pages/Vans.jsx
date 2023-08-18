@@ -59,7 +59,9 @@ export function GithubUser({ dataResults }) {
                         style={{
                           width: `${person.followersCount}%`,
                         }}
-                      ></div>
+                      >
+                        {person.followersCount}%
+                      </div>
                     </div>
                     <br />
                     <div className="d-flex justify-content-between align-items-center">
