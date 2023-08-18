@@ -6,7 +6,7 @@ import About from "./pages/About"
 import NoPage from "./pages/NoPage"
 // import './static/css/index.css';
 import './static/css/header.css';
-import Cover from "./App"
+// import Cover from "./App"
 import Vans from './pages/Vans';
 import PersonDetails from './pages/DetailsPage';
 // import Footer from './pages/Footer';
@@ -14,7 +14,7 @@ import PersonDetails from './pages/DetailsPage';
 
 import Reviews from "./pages/Host/Reviews"
 import Income from "./pages/Host/Income"
-// import HostLayerout from './components/HostLayerout';
+import HostLayerout from './components/HostLayerout';
 // import Header from './pages/Header';
 
 import LayOut from "./components/LayOut"
@@ -30,14 +30,15 @@ function App() {
         <Route element={<LayOut />}>
           <Route path="*" element={<NoPage />} />
           <Route path="/" element={<Home />} />
-          <Route path="/cover" element={<Cover />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/persons" element={<Vans />} />
-          <Route path="/persons/:id" element={<PersonDetails />} />
+          {/* <Route path="/cover" element={<Cover />} /> */}
+          <Route path="about" element={<About />} />
+          <Route path="persons" element={<Vans />} />
+          <Route path="persons/:id" element={<PersonDetails />} />
 
-          <Route path="/host" element={<Dashboard />} >
-            <Route path="/host/reviews" element={<Reviews />} />
-            <Route path="/host/income" element={<Income />} />
+          <Route path="host" element={<HostLayerout />} > {/* PARENT:  http://localhost:3000/host/  */}
+            <Route path="" element={<Dashboard />} />
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="income" element={<Income />} />
           </Route>
 
         </Route>
