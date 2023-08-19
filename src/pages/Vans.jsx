@@ -54,12 +54,7 @@ export function GithubUser({ dataResults }) {
                       aria-valuemin="0"
                       aria-valuemax="100"
                     >
-                      <div
-                        className="progress-bar"
-                        style={{
-                          width: `${person.followersCount}%`,
-                        }}
-                      >
+                      <div className="progress-bar" style={{ width: `${person.followersCount}%`}}>
                         {person.followersCount}%
                       </div>
                     </div>
@@ -67,9 +62,7 @@ export function GithubUser({ dataResults }) {
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="btn-group">
                         <Link
-                          to={`/persons/${person.userId}`}
-                          className="btn btn-sm btn-outline-primary"
-                        >
+                          to={`/persons/${person.userId}`} className="btn btn-sm btn-outline-primary">
                           View
                         </Link>
                       </div>
