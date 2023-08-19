@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet"
+		href=
+"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+	<script type="text/javascript"
+src="https://code.jquery.com/jquery-2.1.1.min.js">
+	</script>
+	<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+	</script>
+
+	<script>
+		function Toast1(string, timeLength) {
+			Materialize.toast(
+				'<em>' + string + '</em>', timeLength
+			);
+		}
+		function Toast2(string, timeLength) {
+			Materialize.toast(
+				'<b>' + string + '</b>', timeLength, 'rounded'
+			);
+		}
+		function Toast3(string, timeLength) {
+			Materialize.toast(
+				'<u>' + string + '<u>', timeLength
+			);
+		}
+	</script>
+</head>
+
+<body>
+	<body class="container">
+		<h4>Toasts</h4>
+		<a class="btn" onclick=
+			"Toast1('Emphasized Alert!', 1500)">
+			Emphasized Alert!!
+		</a><br><br>
+
+		<a class="btn" onclick=
+			"Toast2('Bold N rounded Alert!', 1500)">
+			Bold N rounded Alert!!
+		</a><br><br>
+
+		<a class="btn" onclick=
+			"Toast3('Underlined Alert!', 1500)">
+			Underlined Alert!!
+		</a><br><br>
+	</body>
+</body>
+
+</html>
