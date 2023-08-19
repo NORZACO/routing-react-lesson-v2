@@ -14,7 +14,7 @@ export default function Header() {
           <Link to="/contact">Contact</Link>
           <Link to="/persons">Person</Link>
           <Link to="/host/income">Income </Link>
-          {/* <Link to="/host/reviews"> Reviews </Link> */}
+          <Link to="/host"> More </Link>
           {/* <Link to="/host"> HostDashboard </Link> */}
         </nav>
       </header>

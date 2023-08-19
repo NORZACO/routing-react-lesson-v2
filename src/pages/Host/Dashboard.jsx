@@ -6,8 +6,15 @@ export default function Dashboard() {
 
     return (
         <>
-            <h1> Dashboard page </h1>
-            <Outlet />
+            <div style={{
+                height: "500px",
+                width: "auto",
+                backgroundColor: "pink",
+                textAlign : "center"
+            }}>
+                <h1> Dashboard page </h1>
+                <Outlet />
+            </div>
         </>
     )
 };
