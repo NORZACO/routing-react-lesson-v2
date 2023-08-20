@@ -34,7 +34,7 @@ function App() {
           <Route path="about" element={<About />} />
 
 
-          <Route path='persons' /** PARENT */ />
+          <Route path='persons' element={<Vans />}  /** PARENT */ />
           <Route index element={<Vans />} />
           <Route path=":id" element={<PersonDetails />} />
 

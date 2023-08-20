@@ -2,21 +2,26 @@
 
 
 import React from 'react';
-import { Link, Outlet } from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom"
 
 export default function HostLayerout() {
+    const isActiveStyle = {
+        color: "red",
+        fontWeight: "bold",
+        textDecorationLine: "underline",
+    };
 
     return (
         <>
             <nav className='host-navs' style={{
-                backgroundColor : "blueviolet",
+                backgroundColor: "blueviolet",
                 // display: "flex",
                 // justifyContent: "space-around",
-                color : "red"
+                color: "red"
             }}>
-                <Link to="/host"> Dashboard </Link>
-                <Link to="/host/income"> Income </Link>
-                <Link to="/host/reviews"> Reviews </Link>
+                <NavLink style={({ isActive }) => isActive ? isActiveStyle : null} to="/host"> Dashboard </NavLink>
+                <NavLink style={({ isActive }) => isActive ? isActiveStyle : null} to="/host/income"> Income </NavLink>
+                <NavLink style={({ isActive }) => isActive ? isActiveStyle : null} to="/host/reviews"> Reviews </NavLink>
             </nav>
             <Outlet />
         </>
@@ -25,8 +30,8 @@ export default function HostLayerout() {
 
 
 
-        // eslint-disable-next-line no-lone-blocks
-        {/* <Route path="/host" element={<HostLayerout />}>
+// eslint-disable-next-line no-lone-blocks
+{/* <Route path="/host" element={<HostLayerout />}>
           <Route path="/host/income" element={<Income />} />
           <Route path="/host/reviews" element={<Reviews />} />
         </Route> */}
