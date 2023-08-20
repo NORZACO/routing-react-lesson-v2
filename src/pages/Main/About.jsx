@@ -1,8 +1,8 @@
 import React from "react";
-import bgImg from "../static/images/home-hero.png";
+import bgImg from "../../static/images/home-hero.png";
 import { Link } from "react-router-dom";
 // import AppCaller from "../setupTests";
-import "../static/css/about.css";
+import "../../static/css/about.css";
 // import Footer from "./Footer";
 
 export default function About() {
