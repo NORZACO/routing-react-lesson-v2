@@ -21,6 +21,7 @@ export default function HostLayerout() {
             }}>
                 <NavLink style={({ isActive }) => isActive ? isActiveStyle : null} to="/host"> Dashboard </NavLink>
                 <NavLink style={({ isActive }) => isActive ? isActiveStyle : null} to="/host/income"> Income </NavLink>
+                <NavLink style={({ isActive }) => isActive ? isActiveStyle : null} to="/host/persons"> Person </NavLink>
                 <NavLink style={({ isActive }) => isActive ? isActiveStyle : null} to="/host/reviews"> Reviews </NavLink>
             </nav>
             <Outlet />

@@ -9,6 +9,8 @@ import './static/css/header.css';
 // import Cover from "./App"
 import Vans from './pages/Vans';
 import PersonDetails from './pages/DetailsPage';
+import HostVansDetails from './pages/Host/HostVansDetails.jsx';
+
 // import Footer from './pages/Footer';
 // import Heroes from './pages/Heroes';
 
@@ -22,6 +24,7 @@ import Dashboard from './pages/Host/Dashboard';
 
 
 import "./datamocks/server"
+import HostVans from './pages/Host/HostVans';
 
 function App() {
   return (
@@ -42,6 +45,8 @@ function App() {
           <Route path="host" element={<HostLayerout />} /** PARENT */>
             <Route index element={<Dashboard />} />
             <Route path="reviews" element={<Reviews />} />
+            <Route path='persons' element={<HostVans />}  /** PARENT */ />
+            <Route path='persons/:id' element={<HostVansDetails />}  /** PARENT */ />
             <Route path="income" element={<Income />} />
           </Route>
         </Route>
