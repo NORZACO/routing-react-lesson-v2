@@ -1,17 +1,17 @@
 import React from "react";
-import "../static/css/album.css";
+import "../../static/css/album.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import UserApi from "../datamocks/server";
-import { ErrorBoundary } from "./ErrorBoundary";
+import UserApi from "../../datamocks/server";
+import { ErrorBoundary } from "../Main/ErrorBoundary";
 import { FetchingData } from "./FetchingData";
 import { Link } from "react-router-dom";
 
 UserApi();
-export const URL = "/api/users";
 
-export function GithubUser({ dataResults }) {
+
+export function MembersViews({ dataResults }) {
   return (
     <div className="LoaderBoots">
       {/* DEBUG */}
@@ -47,14 +47,17 @@ export function GithubUser({ dataResults }) {
                       <li>{person.birthdate} </li>
                     </ul> */}
                     <div
-                      class="progress"
+                      className="progress"
                       role="progressbar"
                       aria-label="Basic example"
                       aria-valuenow="25"
                       aria-valuemin="0"
                       aria-valuemax="100"
                     >
-                      <div className="progress-bar" style={{ width: `${person.followersCount}%`}}>
+                      <div
+                        className="progress-bar"
+                        style={{ width: `${person.followersCount}%` }}
+                      >
                         {person.followersCount}%
                       </div>
                     </div>
@@ -62,7 +65,9 @@ export function GithubUser({ dataResults }) {
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="btn-group">
                         <Link
-                          to={`/persons/${person.userId}`} className="btn btn-sm btn-outline-primary">
+                          to={`/persons/${person.userId}`}
+                          className="btn btn-sm btn-outline-primary"
+                        >
                           View
                         </Link>
                       </div>
@@ -83,31 +88,12 @@ export function GithubUser({ dataResults }) {
   );
 }
 
-export function LoadingCompenent() {
-  return (
-    <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "10vh",
-        }}
-      >
-        <div className="spinner-border" role="status">
-          <span className="sr-only"> </span>
-        </div>
-      </div>
-    </>
-  );
-}
-
 function FetchData() {
   return (
     <div>
       <ErrorBoundary>
         <FetchingData />
-        <GithubUser />
+        <MembersViews />
       </ErrorBoundary>
     </div>
   );

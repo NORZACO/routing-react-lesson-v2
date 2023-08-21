@@ -4,10 +4,11 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "jquery/dist/jquery.min.js";
-import "../static/css/details.css";
-import NoPage from "./Main/NoPage";
+import "../../static/css/details.css";
+import NoPage from "../Main/NoPage";
 
-export const URL = "/api/users";
+const URL = "/api/v1/users";
+
 
 export default function PersonDetails() {
   const { id } = useParams();
@@ -50,27 +51,34 @@ export default function PersonDetails() {
 
   return (
     <>
-      <div className="container mt-1"
-      style={{ margin: 'auto', paddingTop : "50px" }}>
+      <div
+        className="container mt-1"
+        style={{ margin: "auto", paddingTop: "50px" }}
+      >
         {person && (
           <div className="card mb-3" style={{ maxWidth: "800px" }}>
             <div className="row g-0">
-              <div className="col-md-4" style={{
-                fontFamily : "fantasy"
-              }}>
-            <img
-              src={person.avatar}
-              className="img-fluid rounded-start"
-              alt={`${person.firstName}'s portrait`}
-              style={{ width: "100%", height: "auto", maxWidth: "450px" }}
-            />
+              <div
+                className="col-md-4"
+                style={{
+                  fontFamily: "fantasy",
+                }}
+              >
+                <img
+                  src={person.avatar}
+                  className="img-fluid rounded-start"
+                  alt={`${person.firstName}'s portrait`}
+                  style={{ width: "100%", height: "auto", maxWidth: "450px" }}
+                />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
                   <h2 className="card-title" style={{ textAlign: "center" }}>
                     {person.firstName} {person.lastName}
                   </h2>
-                  <h5 className="card-text font-weight-bold">Email: {person.email}</h5>
+                  <h5 className="card-text font-weight-bold">
+                    Email: {person.email}
+                  </h5>
                   <h5 className="card-text">
                     Job Title: {person.userInfo.jobTitle}
                   </h5>

@@ -1,27 +1,50 @@
 
 import { createServer } from "miragejs";
-// import { USERS } from "./userGenerater";
+import { PRODUCTS } from "./userGenerater";
+
 const { default: sampleUserData } = require('./sampleUser');
 
-console.log(sampleUserData);
+// console.log(sampleUserData);
+// console.log(PRODUCTS);
+
+
+
 
 
 export default function UserApi() {
     createServer({
         routes() {
-            this.namespace = "/api";
+
+            // this.namespace = "api/v1";
+            this.namespace = "/api/v1";
 
             // Read all users
             this.get("/users", () => ({
                 result: sampleUserData,
             }));
 
+            // Read all PRODUCTS
+            this.get("/products", () => ({
+                result: PRODUCTS,
+            }));
+
+
+            // Read a specific products by UUID
+            this.get("/products/:id", (schema, request) => {
+                const id = request.params.id.trim();
+                const product = PRODUCTS.find((product) => product.productId === id);
+                return {
+                    result: product || 'NotFound',
+                };
+            });
+
+
             // Read a specific user by UUID
             this.get("/users/:id", (schema, request) => {
                 const id = request.params.id.trim();
                 const user = sampleUserData.find((user) => user.userId === id);
                 return {
-                    result: user || 'User not found',   
+                    result: user || 'User not found',
                 };
             });
 
