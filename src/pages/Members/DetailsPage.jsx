@@ -40,11 +40,6 @@ export default function PersonDetails() {
   //
   if (person === "User not found") {
     return (
-      //   <div className="spinner-border text-primary" role="status">
-      //     <span className="visually-hidden">Loading...</span>
-      //   </div>
-
-      // Nopage
       <NoPage />
     );
   }
