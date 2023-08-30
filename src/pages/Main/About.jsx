@@ -55,12 +55,12 @@ export default function About() {
         </div>
         <div className="about-page-cta">
           <h2>
-            Your destination is waiting.
+            Always remember to first Learn the basic
             <br />
-            Your van is ready.
+            Be a better programmer.
           </h2>
           <Link className="link-button" to="/vans">
-            Explore our vans
+           Explore Canditates
           </Link>
         </div>
       </div>

@@ -1,21 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../../static/css/home.css';
-import Heroes from '../Main/Heroes';
+import "../../static/css/home.css";
+import Heroes from "../Main/Heroes";
 
 export default function Home() {
   return (
-
     // Heroes
     <>
       <Heroes />
       <div className="container container-home">
-        <h1>You got the travel plans, we got the travel vans.</h1>
+        <h1>Trusted by over 500,000 developers, including...</h1>
         <p>
-          Add adventure to your life by joining the #vanlife movement. Rent the
-          perfect van to make your perfect road trip.
+          News API is a simple, easy-to-use REST API that returns JSON search
+          results for current and historic news articles published by over
+          80,000 worldwide sources..
         </p>
-        <Link to="/persons" className="persons-button">Find your van</Link>
-      </div></>
+        <Link to="/persons" className="persons-button">
+          Find Best Candidate{" "}
+        </Link>
+      </div>
+    </>
   );
 }

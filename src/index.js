@@ -31,6 +31,8 @@ import ProductsLayerout from './components/ProductsLayerout.jsx';
 import ProductsPage from './pages/Product/ProductsPage.jsx';
 
 import Products from './pages/Product/Products.jsx';
+import HostDetailsPage from './pages/Anchor/HostDetailsPage';
+
 
 function App() {
   return (
@@ -52,7 +54,7 @@ function App() {
             <Route index element={<ProductsDashboard />} />
             <Route path="reviews" element={<ProductsReviews />} />
             <Route path='products' element={<ProductsPage />} />
-            <Route path=':id' element={<ProductDetails />} />
+            <Route path='products/:id' element={<HostDetailsPage />} />
             <Route path="income" element={<ProductsIncome />} />
           </Route>
 

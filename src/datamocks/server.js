@@ -23,21 +23,6 @@ export default function UserApi() {
                 result: sampleUserData,
             }));
 
-            // Read all PRODUCTS
-            this.get("/products", () => ({
-                result: PRODUCTS,
-            }));
-
-
-            // Read a specific products by UUID
-            this.get("/products/:id", (schema, request) => {
-                const id = request.params.id.trim();
-                const product = PRODUCTS.find((product) => product.productId === id);
-                return {
-                    result: product || 'NotFound',
-                };
-            });
-
 
             // Read a specific user by UUID
             this.get("/users/:id", (schema, request) => {
@@ -88,6 +73,24 @@ export default function UserApi() {
                         result: 'User not found',
                     };
                 }
+            });
+
+
+
+            
+            // Read all PRODUCTS
+            this.get("/products", () => ({
+                result: PRODUCTS,
+            }));
+
+
+            // Read a specific products by UUID
+            this.get("/products/:id", (schema, request) => {
+                const id = request.params.id.trim();
+                const product = PRODUCTS.find((product) => product.productId === id);
+                return {
+                    result: product || 'NotFound',
+                };
             });
         },
     });

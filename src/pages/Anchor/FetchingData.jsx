@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { MembersViews } from "./Persons";
 import { LoadingCompenent } from "../Main/LoadingCompenent";
-import { Products } from "./Products";
 
 // let RawFetchingData
-export function FetchingProductData() {
+export function FetchingData() {
   const [getdata, setData] = useState([]); // get data
   const [error, setError] = useState(null); // error
   const [isLoading, setLoadeding] = useState(false); // loading
 
-  const URL = "/api/v1/products";
+const URL = "/api/v1/users";
 
   useEffect(() => {
     setLoadeding(true); // Fixed the typo here as well
@@ -26,16 +26,20 @@ export function FetchingProductData() {
     return <LoadingCompenent />;
   }
 
+  // check if they is error
   if (error) {
     return (
-      <div className="alert alert-danger" role="alert">
-        {JSON.stringify(error.message, null, 2)}
-      </div>
+      <>
+      <br /><br />
+        <div class="alert alert-danger">
+          <strong>Danger!</strong> {JSON.stringify(error.message, null, 2)}
+        </div>
+      </>
     );
   }
 
   console.log(getdata.result);
-  if (getdata) return <Products dataResults={getdata.result} />;
+  if (getdata) return <MembersViews dataResults={getdata.result} />;
 
   return <div> No data </div>;
 }
