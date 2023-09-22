@@ -1,20 +1,73 @@
 import React, { useEffect, useState } from "react";
+// import swal from 'sweetalert2'
+import Swal from "sweetalert2";
+import withReactContent from 'sweetalert2-react-content'
+
 import { useParams } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "jquery/dist/jquery.min.js";
 import "../../static/css/details.css";
+import "../../static/css/cards.css";
 import NoPage from "../Main/NoPage";
 
 const URL = "/api/v1/products";
 
 
-export default function HostDetailsPage () {
+const cardStyles = {
+  boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
+  maxWidth: "600px",
+  margin: "auto",
+  textAlign: "center",
+  fontFamily: "arial",
+};
+
+const priceStyles = {
+  color: "grey",
+  fontSize: "22px",
+};
+
+
+
+// const buttonStyles = {
+//   border: "none",
+//   outline: "0",
+//   padding: "12px",
+//   color: "white",
+//   backgroundColor: '' ,
+//   textAlign: "center",
+//   cursor: "pointer",
+//   width: "100%",
+//   fontSize: "18px",
+
+// };
+
+
+
+
+
+export default function HostDetailsPage() {
   const { id } = useParams();
 
   const [person, setPerson] = useState(null);
   const [error, setError] = useState(null);
+  const [addCartcolor, setAddCartcolor] = useState('green');
+  const MySwal = withReactContent(Swal)
+
+  const buttonStyles = {
+    border: "none",
+    outline: "0",
+    padding: "12px",
+    color: "white",
+    backgroundColor: addCartcolor ,
+    textAlign: "center",
+    cursor: "pointer",
+    width: "100%",
+    fontSize: "18px",
+  
+  };
+
 
   useEffect(() => {
     fetch(`${URL}/${id}`)
@@ -39,9 +92,7 @@ export default function HostDetailsPage () {
   console.log(person);
   //
   if (person === "User not found") {
-    return (
-      <NoPage />
-    );
+    return <NoPage />;
   }
 
   return (
@@ -51,74 +102,45 @@ export default function HostDetailsPage () {
         style={{ margin: "auto", paddingTop: "50px" }}
       >
         {person && (
-          <div className="card mb-3" style={{ maxWidth: "800px" }}>
-            <div className="row g-0">
-              <div
-                className="col-md-4"
-                style={{
-                  fontFamily: "fantasy",
+          <>
+            <h2 style={{textAlign: "center"}}>
+            <h1> { person.productName } </h1>
+              </h2>
+              <hr/>
+<br/>
+
+            <div className="card" style={cardStyles}>
+                <img src={ person.productImage } alt={"Denim Jeans"} style={{width: "100%"}} />
+              <h1> { person.productName } </h1>
+              <p style={priceStyles}>${person.productPrice }</p>
+              <p>
+                { person.productDescription }
+              </p>
+              <p>
+                <button
+                onClick={() => {
+                  Swal.fire(
+                    'Good job!',
+                    `"${person.productName}" has been added to the cart`,
+                    'success'
+                  )
+
+                  // MySwal.fire({
+                  //   title: <p>Hello World</p>,
+                  //   didOpen: () => {
+                  //     // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+                  //     MySwal.showLoading()
+                  //   },
+                  // }).then(() => {
+                  //   return MySwal.fire(<p>Shorthand works too</p>)
+                  // })
+
+                  return setAddCartcolor("blue");
                 }}
-              >
-                <img
-                  src={person.avatar}
-                  className="img-fluid rounded-start"
-                  alt={`${person.firstName}'s portrait`}
-                  style={{ width: "100%", height: "auto", maxWidth: "450px" }}
-                />
-              </div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h2 className="card-title" style={{ textAlign: "center" }}>
-                    {person.firstName} {person.lastName}
-                  </h2>
-                  <h5 className="card-text font-weight-bold">
-                    Email: {person.email}
-                  </h5>
-                  <h5 className="card-text">
-                    Job Title: {person.userInfo.jobTitle}
-                  </h5>
-
-                  <h6 className="mt-4">About Me:</h6>
-                  <p className="card-text">{person.aboutMe}</p>
-
-                  <h6 className="mt-4">Biography:</h6>
-                  <p className="card-text">{person.userInfo.biograph}</p>
-
-                  <h6 className="mt-4">Education:</h6>
-                  <p className="card-text">{person.userInfo.school}</p>
-
-                  <h6 className="mt-4">Company:</h6>
-                  <p className="card-text">{person.userInfo.company}</p>
-
-                  <h6 className="mt-4">Languages:</h6>
-                  <p className="card-text">{person.userInfo.languages}</p>
-
-                  <h6 className="mt-4">Social Media:</h6>
-                  <ul>
-                    {Object.entries(person.userInfo.socialMedia).map(
-                      ([key, value]) => (
-                        <li key={key}>
-                          <a
-                            href={value}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {key.charAt(0).toUpperCase() + key.slice(1)}
-                          </a>
-                        </li>
-                      )
-                    )}
-                  </ul>
-
-                  <p className="card-text">
-                    <small className="text-body-secondary">
-                      Member since: {person.registeredAt}
-                    </small>
-                  </p>
-                </div>
-              </div>
+                style={buttonStyles}> Add to Cart </button>
+              </p>
             </div>
-          </div>
+          </>
         )}
       </div>
     </>

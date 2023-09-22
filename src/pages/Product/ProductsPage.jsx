@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { LoadingCompenent } from "../Main/LoadingCompenent";
 
 const URL = "/api/v1/products";
@@ -60,6 +61,7 @@ function ProductsPage({ dataResults }) {
                     <img
                       src={product.productImage}
                       className="img-fluid rounded-start"
+                      height={"100px"}
                       alt={product.productName}
                     />
                   </div>
@@ -72,6 +74,13 @@ function ProductsPage({ dataResults }) {
                           NOK {product.productPrice}
                         </small>
                       </p>
+                      {/* link */}
+                      <Link
+                        to={`details/${product.productId}`}
+                        className="btn btn-primary"
+                      >
+                        View
+                      </Link>
                     </div>
                   </div>
                 </div>
