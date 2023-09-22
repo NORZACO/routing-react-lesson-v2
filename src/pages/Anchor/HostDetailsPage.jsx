@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 // import swal from 'sweetalert2'
 import Swal from "sweetalert2";
 // import withReactContent from 'sweetalert2-react-content'
+import { Link } from "react-router-dom";
 
 import { useParams } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -13,7 +14,6 @@ import "../../static/css/cards.css";
 import NoPage from "../Main/NoPage";
 
 const URL = "/api/v1/products";
-
 
 const cardStyles = {
   boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
@@ -28,8 +28,6 @@ const priceStyles = {
   fontSize: "22px",
 };
 
-
-
 // const buttonStyles = {
 //   border: "none",
 //   outline: "0",
@@ -43,16 +41,12 @@ const priceStyles = {
 
 // };
 
-
-
-
-
 export default function HostDetailsPage() {
   const { id } = useParams();
 
   const [person, setPerson] = useState(null);
   const [error, setError] = useState(null);
-  const [addCartcolor, setAddCartcolor] = useState('green');
+  const [addCartcolor, setAddCartcolor] = useState("green");
   // const MySwal = withReactContent(Swal)
 
   const buttonStyles = {
@@ -60,14 +54,12 @@ export default function HostDetailsPage() {
     outline: "0",
     padding: "12px",
     color: "white",
-    backgroundColor: addCartcolor ,
+    backgroundColor: addCartcolor,
     textAlign: "center",
     cursor: "pointer",
     width: "100%",
     fontSize: "18px",
-  
   };
-
 
   useEffect(() => {
     fetch(`${URL}/${id}`)
@@ -103,41 +95,43 @@ export default function HostDetailsPage() {
       >
         {person && (
           <>
-            <h2 style={{textAlign: "center"}}>
-            <h1> { person.productName } </h1>
-              </h2>
-              <hr/>
-<br/>
+            <h2 style={{ textAlign: "center" }}>
+              <h1> {person.productName} </h1>
+            </h2>
+
+            {/* go back to all products */}
+            <Link to="../../" relative="path" className="btn btn-primary">
+              <i className="bi bi-arrow-left-circle"></i> Go Back
+            </Link>
+
+            <hr />
+            
+            <br />
 
             <div className="card" style={cardStyles}>
-                <img src={ person.productImage } alt={"Denim Jeans"} style={{width: "100%"}} />
-              <h1> { person.productName } </h1>
-              <p style={priceStyles}>${person.productPrice }</p>
-              <p>
-                { person.productDescription }
-              </p>
+              <img
+                src={person.productImage}
+                alt={"Denim Jeans"}
+                style={{ width: "100%" }}
+              />
+              <h1> {person.productName} </h1>
+              <p style={priceStyles}>${person.productPrice}</p>
+              <p>{person.productDescription}</p>
               <p>
                 <button
-                onClick={() => {
-                  Swal.fire(
-                    'Good job!',
-                    `"${person.productName}" has been added to the cart`,
-                    'success'
-                  )
-
-                  // MySwal.fire({
-                  //   title: <p>Hello World</p>,
-                  //   didOpen: () => {
-                  //     // `MySwal` is a subclass of `Swal` with all the same instance & static methods
-                  //     MySwal.showLoading()
-                  //   },
-                  // }).then(() => {
-                  //   return MySwal.fire(<p>Shorthand works too</p>)
-                  // })
-
-                  return setAddCartcolor("blue");
-                }}
-                style={buttonStyles}> Add to Cart </button>
+                  onClick={() => {
+                    Swal.fire(
+                      "Good job!",
+                      `"${person.productName}" has been added to the cart`,
+                      "success"
+                    );
+                    return setAddCartcolor("blue");
+                  }}
+                  style={buttonStyles}
+                >
+                  {" "}
+                  Add to Cart{" "}
+                </button>
               </p>
             </div>
           </>

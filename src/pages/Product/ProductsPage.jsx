@@ -50,7 +50,8 @@ function ProductsPage({ dataResults }) {
         fontSize: "50px",
         color: "rgb(0, 0, 0)",
         textShadow: "2px 2px 5px rgb(0, 0, 0)",
-         }}>List of products</h3>
+         }}>List of products { dataResults.length } </h3>
+
       <div className="container">
         <div className="row">
           {dataResults.map((product) => (
@@ -58,12 +59,14 @@ function ProductsPage({ dataResults }) {
               <div className="card mb-3" style={{ maxWidth: "540px" }}>
                 <div className="row g-0">
                   <div className="col-md-4">
+                  <Link  to={`details/${product.productId}`}>
                     <img
                       src={product.productImage}
                       className="img-fluid rounded-start"
-                      height={"100px"}
+                      // style={{ height : '50px' }}
                       alt={product.productName}
                     />
+                    </Link>
                   </div>
                   <div className="col-md-8">
                     <div className="card-body">
@@ -74,13 +77,6 @@ function ProductsPage({ dataResults }) {
                           NOK {product.productPrice}
                         </small>
                       </p>
-                      {/* link */}
-                      <Link
-                        to={`details/${product.productId}`}
-                        className="btn btn-primary"
-                      >
-                        View
-                      </Link>
                     </div>
                   </div>
                 </div>
