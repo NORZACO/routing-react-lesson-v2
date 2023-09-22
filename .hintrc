@@ -18,5 +18,14 @@
         "button-name": "off"
       }
     ]
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_ff <= 115",
+    "not firefox <= 115",
+    "not ios_saf <= 14.8",
+    "not opera <= 100",
+    "not safari <= 14.1"
+  ]
 }

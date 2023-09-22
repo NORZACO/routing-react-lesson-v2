@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import swal from 'sweetalert2'
 import Swal from "sweetalert2";
-import withReactContent from 'sweetalert2-react-content'
+// import withReactContent from 'sweetalert2-react-content'
 
 import { useParams } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -53,7 +53,7 @@ export default function HostDetailsPage() {
   const [person, setPerson] = useState(null);
   const [error, setError] = useState(null);
   const [addCartcolor, setAddCartcolor] = useState('green');
-  const MySwal = withReactContent(Swal)
+  // const MySwal = withReactContent(Swal)
 
   const buttonStyles = {
     border: "none",
