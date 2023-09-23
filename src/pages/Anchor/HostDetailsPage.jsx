@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 // import swal from 'sweetalert2'
 import Swal from "sweetalert2";
 // import withReactContent from 'sweetalert2-react-content'
-import { Link } from "react-router-dom";
+import { Link, Outlet,   } from "react-router-dom";
 
 import { useParams } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -28,26 +29,24 @@ const priceStyles = {
   fontSize: "22px",
 };
 
-// const buttonStyles = {
-//   border: "none",
-//   outline: "0",
-//   padding: "12px",
-//   color: "white",
-//   backgroundColor: '' ,
-//   textAlign: "center",
-//   cursor: "pointer",
-//   width: "100%",
-//   fontSize: "18px",
 
-// };
 
 export default function HostDetailsPage() {
   const { id } = useParams();
+  // useOutletContext
+  // const [currentProduct, setCurrentProduct] = React.useState(null);
 
-  const [person, setPerson] = useState(null);
+
+
+  // const [product, setproduct] = useState(null);
+  const [currentProduct, setCurrentProduct] = useState([]);
   const [error, setError] = useState(null);
   const [addCartcolor, setAddCartcolor] = useState("green");
-  // const MySwal = withReactContent(Swal)
+
+
+
+
+  
 
   const buttonStyles = {
     border: "none",
@@ -61,15 +60,24 @@ export default function HostDetailsPage() {
     fontSize: "18px",
   };
 
+  // activeStyles
+  const activeStyles = {
+    backgroundColor: "red",
+  };
+
+
+
+
   useEffect(() => {
     fetch(`${URL}/${id}`)
       .then((res) => {
         if (!res.ok) {
-          throw new Error("Failed to fetch person details");
+          throw new Error("Failed to fetch product details");
         }
         return res.json();
       })
-      .then((data) => setPerson(data.result))
+      .then((data) => setCurrentProduct(data.result))
+      
       .catch((err) => setError(err.message));
   }, [id]);
 
@@ -81,23 +89,18 @@ export default function HostDetailsPage() {
     );
   }
 
-  console.log(person);
+  console.log(currentProduct);
   //
-  if (person === "User not found") {
+  if (currentProduct === "User not found") {
     return <NoPage />;
   }
 
   return (
     <>
-      <div
-        className="container mt-1"
-        style={{ margin: "auto", paddingTop: "50px" }}
-      >
-        {person && (
+      <div className="container mt-1" style={{ margin: "auto", paddingTop: "50px" }} >
+        {currentProduct && (
           <>
-            <h2 style={{ textAlign: "center" }}>
-              <h1> {person.productName} </h1>
-            </h2>
+            <h2 style={{ textAlign: "center" }}> {currentProduct.productName}  </h2>
 
             {/* go back to all products */}
             <Link to="../../" relative="path" className="btn btn-primary">
@@ -110,19 +113,19 @@ export default function HostDetailsPage() {
 
             <div className="card" style={cardStyles}>
               <img
-                src={person.productImage}
+                src={currentProduct.productImage}
                 alt={"Denim Jeans"}
                 style={{ width: "100%" }}
               />
-              <h1> {person.productName} </h1>
-              <p style={priceStyles}>${person.productPrice}</p>
-              <p>{person.productDescription}</p>
+              <h1> {currentProduct.productName} </h1>
+              <p style={priceStyles}>${currentProduct.productPrice}</p>
+              <p>{currentProduct.productDescription}</p>
               <p>
                 <button
                   onClick={() => {
                     Swal.fire(
                       "Good job!",
-                      `"${person.productName}" has been added to the cart`,
+                      `"${currentProduct.productName}" has been added to the cart`,
                       "success"
                     );
                     return setAddCartcolor("blue");
@@ -134,6 +137,12 @@ export default function HostDetailsPage() {
                 </button>
               </p>
             </div>
+           <div className="topnav">
+            <NavLink to="."style={({ isActive}) => isActive ? activeStyles : null}> Details </NavLink>
+            <NavLink to="pricing"style={({ isActive}) => isActive ? activeStyles : null}> Pricing </NavLink>
+            <NavLink to="photos"style={({ isActive}) => isActive ? activeStyles : null}> Photos </NavLink>
+           </div>     
+           <Outlet context={{ currentProduct }} />;
           </>
         )}
       </div>

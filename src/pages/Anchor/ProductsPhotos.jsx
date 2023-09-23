@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function HostVans(){
+export default function ProductsPhotos(){
 
 
     return (
@@ -11,7 +11,7 @@ export default function HostVans(){
                 backgroundColor : "grey",
                 textAlign : "center"
                 }}>
-                <h1> HostVansDetails page </h1>
+                <h1> ProductsPhotos page  </h1>
             </div>
         </>
     )

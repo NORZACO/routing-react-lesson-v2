@@ -59,7 +59,7 @@ function ProductsPage({ dataResults }) {
               <div className="card mb-3" style={{ maxWidth: "540px" }}>
                 <div className="row g-0">
                   <div className="col-md-4">
-                  <Link  to={`details/${product.productId}`}>
+                  <Link  to={`${product.productId}`}>
                     <img
                       src={product.productImage}
                       className="img-fluid rounded-start"
